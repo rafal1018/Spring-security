@@ -2,15 +2,22 @@ package pl.strefakursow.Spring.Security.Course;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/secured")
 public class SecuredController {
 
-    @GetMapping
+    @GetMapping(value = "/secured-basic")
     public String securedPage() {
-        return "secured";
+        return "secured-basic";
+    }
+
+    @GetMapping(value = "/secured-form")
+    public String formSecuredPage(){
+        return"secured-form";
+    }
+    @GetMapping(value = "/secured-form/login")
+    public String formLogin(){
+        return "login";
     }
 
 }
